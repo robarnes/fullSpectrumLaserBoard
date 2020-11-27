@@ -230,7 +230,7 @@ switch.fan.output_pin                        2.4              #
 switch.fan.output_type                       pwm              # pwm output settable with S parameter in the input_on_comand
 #switch.fan.max_pwm                          255              # set max pwm for the pin default is 255
 
-switch.misc.enable                           false             #
+switch.misc.enable                           false            #
 switch.misc.input_on_command                 M42              #
 switch.misc.input_off_command                M43              #
 switch.misc.output_pin                       2.4              #
@@ -253,16 +253,18 @@ switch.misc.output_type                      digital          # just an on or of
 ## Endstops
 endstops_enable                              true             # the endstop module is enabled by default and can be disabled here
 #corexy_homing                               false            # set to true if homing on a hbot or corexy
+# alpha = X-axis
 alpha_min_endstop                            1.24^            # add a ! to invert if endstop is NO connected to ground
 alpha_max_endstop                            1.25^            # NOTE set to nc if this is not installed
-alpha_homing_direction                       home_to_min      # or set to home_to_max and set alpha_max
+alpha_homing_direction                       home_to_max      # or set to home_to_max and set alpha_max
 alpha_min                                    0                # this gets loaded after homing when home_to_min is set
-alpha_max                                    200              # this gets loaded after homing when home_to_max is set
+alpha_max                                    370              # this gets loaded after homing when home_to_max is set
+# beta = Y-axis
 beta_min_endstop                             1.26^            #
 beta_max_endstop                             1.27^            #
 beta_homing_direction                        home_to_max      #
 beta_min                                     0                #
-beta_max                                     200              #
+beta_max                                     238              #
 gamma_min_endstop                            1.28^            #
 gamma_max_endstop                            1.29^            #
 gamma_homing_direction                       home_to_min      #
@@ -276,7 +278,7 @@ gamma_max_travel                             500              # max travel in mm
 # optional order in which axis will home, default is they all home at the same time,
 # if this is set it will force each axis to home one at a time in the specified order
 #homing_order                                 XYZ              # x axis followed by y then z last
-#move_to_origin_after_home                    false            # move XY to 0,0 after homing
+move_to_origin_after_home                    false            # move XY to 0,0 after homing
 
 # optional enable limit switches, actions will stop if any enabled limit switch is triggered
 #alpha_limit_enable                          false            # set to true to enable X min and max limit switches
